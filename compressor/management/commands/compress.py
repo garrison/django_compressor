@@ -74,6 +74,7 @@ def patched_render_firstnode(self, context):
                 self._log.write("Caught error when rendering extend node from "
                                 "template %s\n" % self)
             return None
+        firstnode.get_parent = firstnode._old_get_parent
     return extra_context
 
 def patched_get_parent(self, context):
